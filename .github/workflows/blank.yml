@@ -1,0 +1,55 @@
+from highrise import BaseBot, Position
+from highrise import __main__
+from highrise import *
+from highrise.models import *
+from highrise.webapi import *
+from highrise.models_webapi import *
+from highrise import BaseBot, User, Position, AnchorPosition
+from highrise.__main__ import SessionMetadata
+from highrise.models import (
+    AnchorPosition,
+    ChannelEvent,
+    ChannelRequest,
+    ChatEvent,
+    ChatRequest,
+    CurrencyItem,
+    EmoteEvent,
+    EmoteRequest,
+    Error,
+    FloorHitRequest,
+    GetMessagesRequest,
+    GetRoomUsersRequest,
+    GetWalletRequest,
+    IndicatorRequest,
+    Item,
+    Position,
+    Reaction,
+    ReactionEvent,
+    ReactionRequest,
+    SessionMetadata,
+    TeleportRequest,
+    TipReactionEvent,
+    User,
+    UserJoinedEvent,
+    UserLeftEvent,
+)
+import asyncio
+import random
+import time
+import os
+from datetime import datetime
+
+# استيراد الوحدات
+from modules.user_manager import UserManager
+from modules.position_manager import PositionManager
+from modules.emotes_manager import EmotesManager
+from modules.idle_activity_manager import IdleActivityManager
+from modules.room_moderator_detector import RoomModeratorDetector
+from modules.location_tracker import LocationTracker
+from modules.emote_timing_manager import EmoteTimingManager
+from modules.secrets_manager import secrets_manager
+
+# إعدادات أساسية من المتغيرات السرية
+BOT_OWNER = os.getenv('BOT_OWNER', 'DefaultOwner')  # اسم مالك البوت
+BOT_OWNER_ID = os.getenv('BOT_OWNER_ID', '')  # معرف مالك البوت
+BOT_ID = os.getenv('BOT_ID', '')  # معرف البوت
